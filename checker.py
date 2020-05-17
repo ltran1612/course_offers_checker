@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
+from selenium.webdriver import ChromeOptions
 from enum import Enum
 import re
 import constants
@@ -64,7 +65,10 @@ class Checker(object):
         first_campus_choice_id = "id_DA"
 
         # load the driver
-        driver = webdriver.Chrome()
+        chrome_options = ChromeOptions()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
+        driver = webdriver.Chrome(options = chrome_options)
         # go to the class search web
         driver.get(self.lookup_url)
 
