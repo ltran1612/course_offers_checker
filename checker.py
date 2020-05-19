@@ -14,6 +14,8 @@ class CourseStatus(Enum):
     INVALID_MAJOR = -1
     INVALID_COURSE_NAME = -2
 
+PATH_TO_CHROME_DRIVER = "/usr/local/bin/chromedriver"
+
 class Checker(object):
     def __init__(self, url):
         self.lookup_url = url
@@ -68,7 +70,7 @@ class Checker(object):
         chrome_options = ChromeOptions()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--disable-gpu")
-        driver = webdriver.Chrome(options = chrome_options)
+        driver = webdriver.Chrome(options = chrome_options, executable_path=PATH_TO_CHROME_DRIVER)
         # go to the class search web
         driver.get(self.lookup_url)
 
