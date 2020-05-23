@@ -36,6 +36,6 @@ Contain the constants of strings corresponding to the campuses in the website. T
         driver = webdriver.Chrome(options = chrome_options, executable_path=PATH_TO_CHROME_DRIVER)
         
 3. Change the variable PATH_TO_CHROME_DRIVER in checker.py file with the path to ChromeDriver on your computer.  
-4. After that, you can run using the command below in the folder of the clone repository
+4. After that, you can run using the command below in the folder of the cloned repository
 
         python3 check.py
